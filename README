@@ -1,0 +1,44 @@
+Linear Regression with Mini-Batch Gradient Descent Model
+Author: Luke Zoroufy
+Date: 10/30/20
+
+FUNCTION:
+This program reads in data as a series of doubles.  Each data point is a series of inputs the have one output.
+This program creates a model and calculates the training error and the validation error using k-fold cross-validation.
+This program compares different models created using the hyperparameters specified from the user.
+
+CLASSES:
+1) driver
+2) Data
+3) Model
+4) DataSet
+5) Folds
+After compiling, run the driver code with the following arguments
+
+ARGUMENTS:
+1) -f <String>: Path to the data file; This parameter is required.
+2) -k <Integer>:  Specifies the number of folds for k-fold cross-validation; default is 5.  A k value of 1 specifies that the program should use all the data for both training and validation.
+3) -d <Integer>:  Specifies the smallest polynomial degree to evaluate; default is 1
+4) -D <Integer>:  Specifies the largest polynomial degree to evaluate; default is -d so that only one degree is evaluated
+5) -a <Double>:  Specifies the learning rate in mini-batch gradient descent; default is 0.005
+6) -e <Integer>:  Specifies the epoch limit in mini-batch gradient descent; default is 10000
+7) -m <Integer>:  Specifies the batch size in mini-batch gradient descent;  default is 0,  which is interpreted as specifying batch gradient descent
+8) -v <Integer>:  Specifies a verbosity level (1-5), indicating how much output the program should produce; default is 1
+With the exception of the data file path, all other arguments are optional and will use the default value if not specified.
+
+OUTPUT:
+The output is dependant on the the verbosity level:
+Level 1) Prints the training error and the validation error, averaged across all of the folds, for each degree.
+Level 2) In addition to level 1, the output contains the training error and the validation error for each fold that is designated for validation.
+Level 3) In addition to level 2, the output contains the total time to fit the model, the number of epochs and iterations used, the average time per iteration, the stopping condition for gradient descent, and the final model and weights that were identified.
+Level 4) In addition to level 3, the output contains the cost and number of iterations every 1000 epochs and the final epoch.
+Level 5) In addition to level 4, the output contains the current model every 1000 epochs and the final epoch.
+
+DATA FILE FORMAT:
+The data file should contain one data point per line.
+Each line should have a list of 2 or more doubles, separated by a space.
+The final value in the line is the output value.
+All other values on that line are treated as the input values.
+
+KNOW BUGS:
+The program is fully functional and produces the correct output values.
